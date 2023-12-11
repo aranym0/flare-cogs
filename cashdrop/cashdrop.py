@@ -237,8 +237,10 @@ class Cashdrop(commands.Cog):
 
         await self.config.guild(guild).maths.set(toggle)
         if toggle:
+            await self.config.guild(guild).maths.set(True)
             await ctx.send("Maths mode is now enabled")
         else:
+            await self.config.guild(guild).maths.set(False)
             await ctx.send("Maths mode is now disabled")
         await self.generate_cache()
 
@@ -258,7 +260,9 @@ class Cashdrop(commands.Cog):
 
         await self.config.guild(guild).trivia.set(toggle)
         if toggle:
+            await self.config.guild(guild).maths.set(True)
             await ctx.send("Trivia mode is now enabled")
         else:
+            await self.config.guild(guild).maths.set(False)
             await ctx.send("Trivia mode is now disabled")
         await self.generate_cache()
