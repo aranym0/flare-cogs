@@ -121,7 +121,7 @@ class Cashdrop(commands.Cog):
                 "pickup", channel=message.channel, user=None
             )
             try:
-                await self.bot.wait_for("message", check=pred, timeout=10)
+                await self.bot.wait_for("message", check=pred, timeout=120)
             except asyncio.TimeoutError:
                 await msg.edit(content="Too slow!")
                 return
